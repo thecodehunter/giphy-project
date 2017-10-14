@@ -12,12 +12,17 @@ const Gif = (props) => {
 };
 
 class SearchResults extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
     render() {
+        const { results } = this.props;
+
         return (
             <div className="root">
                 <GridList cellHeight={200} spacing={1} className="gridList" cols={3}>
-                    {this.props.results.map((result, i) => <Gif key={i} {...result}/>)}
+                    {results.map((result, i) => <Gif key={i} {...result}/>)}
                 </GridList>
             </div>
         );

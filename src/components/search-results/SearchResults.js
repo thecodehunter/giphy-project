@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Gif = (props) => {
     return (
         <GridListTile cols={3}>
-            <img src={props.images.preview_gif.url} alt="" />
+            <img src={props.url} alt="" />
         </GridListTile>
     );
 };
@@ -22,7 +22,7 @@ class SearchResults extends React.Component {
         return (
             <div className="root">
                 <GridList cellHeight={200} spacing={1} className="gridList" cols={3}>
-                    {results.map((result, i) => <Gif key={i} {...result}/>)}
+                    {results.map((result, i) => <Gif key={i} url={result.images.preview_gif.url} />)}
                 </GridList>
             </div>
         );

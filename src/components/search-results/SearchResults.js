@@ -3,7 +3,7 @@ import { GridList, GridListTile } from 'material-ui/GridList';
 import './SearchResults.css';
 import PropTypes from 'prop-types';
 
-const Gif = (props) => {
+const Gif = props => {
     return (
         <GridListTile cols={3}>
             <img src={props.url} alt="" />

@@ -11,8 +11,9 @@ import './Search.css';
 
 class Search extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.state = {
             searchInput: '',
             data: []

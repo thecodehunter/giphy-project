@@ -1,6 +1,7 @@
 import React from 'react';
 import { GridList, GridListTile } from 'material-ui/GridList';
 import './SearchResults.css';
+import PropTypes from 'prop-types';
 
 const Gif = (props) => {
     return (
@@ -21,6 +22,10 @@ class SearchResults extends React.Component {
             </div>
         );
     }
+};
+
+SearchResults.propTypes = {
+    results: PropTypes.array.isRequired
 };
 
 export default SearchResults;

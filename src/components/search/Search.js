@@ -20,7 +20,7 @@ class Search extends React.Component {
         }
     }
 
-    doSearch = (e) => {
+    doSearch = () => {
         GiphyService.search(this.state.searchInput).then((resp) => {
             this.setState({ data: resp.data});
         });

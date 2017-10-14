@@ -1,0 +1,13 @@
+.root {
+    display: flex;
+    flexWrap: wrap;
+    justifyContent: space-around;
+    overflow: hidden;
+    width: 50%;
+    margin: 100px auto;
+}
+
+.gridList {
+    width: 930px;
+    height: 450px;
+}

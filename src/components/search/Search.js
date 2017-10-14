@@ -26,12 +26,17 @@ class Search extends React.Component {
         });
     };
 
+    onChange = (e) => {
+        this.setState({
+            searchInput: e.target.value
+        });
+    }
 
     render() {
         return (
             <div className="search-wrapper">
                 <Input type="text" value={this.state.searchInput}
-                       onChange={(e) => this.setState({searchInput: e.target.value})}
+                       onChange={this.onChange}
                        placeholder="Type here to search.."></Input>
                 <Button onClick={this.doSearch}>Search</Button>
                 <SearchResults results={this.state.data}/>

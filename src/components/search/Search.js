@@ -11,26 +11,32 @@ import './Search.css';
 
 class Search extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.state = {
             searchInput: '',
             data: []
         }
     }
 
-    doSearch = (e) => {
+    doSearch = () => {
         GiphyService.search(this.state.searchInput).then((resp) => {
             this.setState({ data: resp.data});
         });
     };
 
+    onChange = (e) => {
+        this.setState({
+            searchInput: e.target.value
+        });
+    }
 
     render() {
         return (
             <div className="search-wrapper">
                 <Input type="text" value={this.state.searchInput}
-                       onChange={(e) => this.setState({searchInput: e.target.value})}
+                       onChange={this.onChange}
                        placeholder="Type here to search.."></Input>
                 <Button onClick={this.doSearch}>Search</Button>
                 <SearchResults results={this.state.data}/>
